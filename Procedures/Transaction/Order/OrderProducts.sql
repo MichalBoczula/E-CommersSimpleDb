@@ -19,7 +19,11 @@ BEGIN
 		@CustomerId = @CustomerId,
 		@InvoiceId = @InvoiceIdOut;
 
+		EXECUTE CleanUpShoppingCartForCustomer
+		@CustomerId = @CustomerId;
+
 		SELECT @InvoiceId = @InvoiceIdOut;
+		
 		COMMIT;
 	END TRY
 	BEGIN CATCH

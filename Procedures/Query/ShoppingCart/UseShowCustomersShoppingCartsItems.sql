@@ -1,5 +1,6 @@
 EXECUTE ShowCustomersShoppingCartsItems
-@CustomerId = 1;
+@CustomerId = 5;
 
 EXECUTE ShowCustomersShoppingCartsItems
 @CustomerId = 6;
+
