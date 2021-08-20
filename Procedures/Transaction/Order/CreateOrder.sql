@@ -9,7 +9,7 @@ CREATE OR ALTER PROCEDURE CreateOrder
 AS
 BEGIN
 	BEGIN TRY
-		SELECT CustomerId, ProductId, Quantity INTO #TEMP FROM ShoppingCarts WHERE CustomerId = 1;
+		SELECT CustomerId, ProductId, Quantity INTO #TEMP FROM ShoppingCarts WHERE CustomerId = @CustomerId;
 		
 		SELECT * from #TEMP;
 
