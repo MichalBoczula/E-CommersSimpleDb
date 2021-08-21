@@ -16,8 +16,10 @@ BEGIN
 				(select SUM(SC.Quantity * P.Price) AS Total from ShoppingCarts SC 
 					join Products P on SC.ProductId = P.Id
 					where CustomerId = @CustomerId));
-		COMMIT
+		COMMIT;
+		
 		SELECT @InvoiceId = SCOPE_IDENTITY();
+		
 	END TRY
 	BEGIN CATCH
 		IF(@@TRANCOUNT > 0)

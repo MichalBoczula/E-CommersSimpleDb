@@ -3,12 +3,12 @@ GO
 
 CREATE OR ALTER PROCEDURE OrderProducts
 (
-	@CustomerId INT,
-	@InvoiceId INT OUTPUT
+	@CustomerId INT
 )
 AS
 BEGIN
 	BEGIN TRY
+		SET NOCOUNT ON
 		DECLARE @InvoiceIdOut INT;
 
 		EXECUTE CreateInvoice
@@ -22,9 +22,8 @@ BEGIN
 		EXECUTE CleanUpShoppingCartForCustomer
 		@CustomerId = @CustomerId;
 
-		SELECT @InvoiceId = @InvoiceIdOut;
-		
 		COMMIT;
+		SET NOCOUNT OFF
 	END TRY
 	BEGIN CATCH
 		IF(@@TRANCOUNT > 0)

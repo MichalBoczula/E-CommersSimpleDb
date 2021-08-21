@@ -1,3 +1,5 @@
+DECLARE @CONTEXT_INFO  VARBINARY(128);
+
 BEGIN TRANSACTION
 	EXECUTE AddCustomer
 		@FirstName		= 'Adam',  
@@ -21,4 +23,26 @@ BEGIN TRANSACTION
 		@FirstName		= 'Martyna',  
 		@LastName		= 'Nowakowska',
 		@SalutationId	= 2;
+COMMIT
+
+
+BEGIN TRANSACTION
+	EXECUTE AddCustomer
+		@FirstName		= 'NewOne',  
+		@LastName		= 'ForTrigger',
+		@SalutationId	= 1;
+COMMIT
+
+BEGIN TRANSACTION
+	EXECUTE AddCustomer
+		@FirstName		= 'Kamil',  
+		@LastName		= 'Trigger',
+		@SalutationId	= 1;
+COMMIT
+
+BEGIN TRANSACTION
+	EXECUTE AddCustomer
+		@FirstName		= 'Average',  
+		@LastName		= 'Joe',
+		@SalutationId	= 1;
 COMMIT

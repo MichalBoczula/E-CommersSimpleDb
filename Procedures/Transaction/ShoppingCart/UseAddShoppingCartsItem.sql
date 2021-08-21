@@ -57,3 +57,21 @@ EXECUTE AddShoppingCartsItem
 	@CustomerId = 5,
 	@Quantity = 1;
 COMMIT;
+
+EXECUTE AddShoppingCartsItem
+	@ProductId = 3,
+	@CustomerId = 9,
+	@Quantity = 3;
+COMMIT;
+
+EXECUTE AddShoppingCartsItem
+	@ProductId = 5,
+	@CustomerId = 9,
+	@Quantity = 1;
+COMMIT;
+
+EXECUTE AddShoppingCartsItem
+	@ProductId = 4,
+	@CustomerId = 9,
+	@Quantity = 1;
+COMMIT;

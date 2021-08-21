@@ -36,3 +36,13 @@ BEGIN TRANSACTION
 		@HouseNumber	= '4',
 		@FlatNumber		= '4';
 COMMIT
+
+
+BEGIN TRANSACTION
+	EXECUTE AddAddress
+		@PostalCode		= '50-004',
+		@City			= 'Wroclaw',
+		@Street			= 'Nowa',
+		@HouseNumber	= '5',
+		@FlatNumber		= '5';
+COMMIT

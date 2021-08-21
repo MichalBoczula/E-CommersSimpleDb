@@ -21,3 +21,10 @@ BEGIN TRANSACTION
 		@CustomerId = 6,
 		@AddressId = 4;
 COMMIT
+
+
+BEGIN TRANSACTION
+	EXECUTE SetAddress
+		@CustomerId = 9,
+		@AddressId = 5;
+COMMIT
